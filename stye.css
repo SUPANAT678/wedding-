@@ -1,0 +1,161 @@
+ 
+  body {
+    font-family: 'Sarabun', sans-serif;
+    background: #f5ead9; /* โทนครีมล้านนา */
+    color: #3e2b1f;
+    scroll-behavior: smooth;
+  }
+
+  /*สีพื้นหลังข้อความชุด1*/  
+  .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(60,35,20,0.45), rgba(60,35,20,0.45)),
+                url('images/photo1.jpg') center/cover; /* <-- วางไฟล์ cover.jpg ในโฟลเดอร์เดียวกัน */
+    background-color: #b5734a; /* สีสำรองถ้าไม่มีรูป */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fdf3e3;
+    text-align: center;
+    position: relative;
+  }
+
+  /*ขนาดข้อความ we are getting*/
+  .hero p { 
+    font-size: clamp(10px, 3vw, 25px);
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+    position: absolute; 
+    bottom: 25%;
+    width: 34ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: type 3s steps(34) forwards;            
+  }
+    @keyframes type  { from { width: 0; } to { width: 34ch; } }
+
+  /*ขนาดข้อความ บุ๋ม&เอฟ*/
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 3vw, 60px);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    color: #a86b2d;
+    position: absolute; 
+    bottom: 15%;
+  }
+
+  /*ขนาดข้อความ วันที่*/
+  .hero h2 {
+    margin-top: 20px;
+    padding: 10px 28px;
+    border: 1px solid #d9b26a;
+    background: rgba(217,178,106,0.15);
+    border-radius: 30px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    position: absolute;
+    bottom: 5%;
+  }
+
+  /*ขนาดข้อความ เลื่อนลงไป*/
+    .hero h3 {
+    position: absolute;
+    bottom: 3%;
+    font-size: 0.9rem;
+    animation: blink 2s infinite;
+  }
+    @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+  }
+
+ /*gallaryรูปภาพ*/
+  .frame { overflow: hidden; padding: 70px 0; }
+  /* ★ กุญแจข้อที่ 1: ปล่อยให้สไลด์ล้นออกนอกกรอบได้ */
+  .mySwiper { overflow: visible; }
+  .mySwiper .swiper-slide {
+    width: 230px;            /* ★ ข้อที่ 2: ใบเล็กลง = เห็นได้หลายใบ */
+    height: 320px;
+    border-radius: 14px;
+    transition: opacity .4s;
+  }
+  .mySwiper .swiper-slide img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+  }
+
+  /*นับถอยหลัง*/
+.hero .date-badge {
+    margin-top: 10px;
+    padding: 5px 28px;
+    border: 1px solid #d9b26a;
+    background: rgba(217,178,106,0.15);
+    border-radius: 30px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  section { padding: 10px 5px; text-align: center; }
+  section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #a86b2d; /* ทองอมน้ำตาล */
+  }
+
+  /* Countdown */
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .countdown div {
+    background: #fffaf0;
+    padding: 20px 25px;
+    border-radius: 15px;
+    border: 1px solid #e6c799;
+    box-shadow: 0 5px 15px rgba(165,105,45,0.12);
+    min-width: 90px;
+  }
+  .countdown span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #a86b2d;
+  }
+  .countdown small { color: #8a6a4d; }
+
+   @media (max-width: 600px) {
+   section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    margin-bottom: 30px;
+    color: #a86b2d; /* ทองอมน้ำตาล */
+  }
+  .countdown div {
+    background: #fffaf0;
+    padding: 2px 2.5px;
+    border-radius: 15px;
+    border: 1px solid #e6c799;
+    box-shadow: 0 5px 15px rgba(165,105,45,0.12);
+    min-width: 15px;
+  }
+
+   }
